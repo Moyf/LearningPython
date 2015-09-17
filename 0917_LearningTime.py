@@ -43,16 +43,9 @@ def getTimeStamp():
 		month = '0' + str(month)
 		# print '%r, 1~9月，需要手动加0' % month
 
-	timeStamp = '%s_%s%s_%s:%s' % (year, month, day, hour, minute)
+	timeStamp = '[%s_%s%s_%s:%s]' % (year, month, day, hour, minute)
 
 	# print timeStamp
 	return timeStamp
 
-
-
-
-
-
-
-
-
+print getTimeStamp()
