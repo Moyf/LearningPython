@@ -5,6 +5,7 @@
 # 为了在每次输出字符串的时候打上时间戳，导入时间库
 import time
 
+
 # 用于获取时间戳的函数
 def getTimeStamp():
 	time_localtime = time.localtime(time.time()) # 注意 time.time() 是函数
@@ -23,6 +24,8 @@ def getTimeStamp():
 
 	# print timeStamp
 	return timeStamp
+
+
 
 #
 '''
@@ -51,12 +54,16 @@ str(getTimeStamp() + testStr + "\n" + testUni.encode('utf-8') + "\n" )
 
 # 新建一个文件以供写入
 outputFile = open('./Ref/testUnicodeOutput.txt', 'a+')
+# outputFile.seek(0)
 outputFile.write(allText)
 
 print allText
 
+
+
 # ↑ 如果尝试直接输出 Unicode 作为字符串，会提示：UnicodeDecodeError: 'ascii' codec can't decode byte 0xe6 in position 0: ordinal not in range(128)
 
+# 并且，直接写入的时候也是失败的，同上的提示。
 
 file = open('./Ref/testUTF-8.txt')
 text = file.readlines()
@@ -68,5 +75,9 @@ for eachLine in text:
 
 	else:
 		print "failed"
+
+
+
+
 
 
